@@ -1,0 +1,66 @@
+ml-base-env:
+  compiler:
+      - toolchain: gcc
+        spec: gcc@12.3
+      - toolchain: llvm
+        spec: llvm@17
+  mpi:
+      spec: cray-mpich@8.1.29
+      gpu: cuda
+  unify: true
+  specs:
+  - cray-mpich%gcc
+  - aws-ofi-nccl@master%gcc
+  - xpmem%gcc
+  - cmake%gcc
+  - cuda@12.0%gcc
+  - fftw%gcc
+  - fmt%gcc
+  - hdf5%gcc
+  - nccl@2.19.3-1%gcc
+  - ninja%gcc
+  - gperftools%gcc
+  - openblas%gcc threads=openmp
+  - cudnn%gcc
+  - cutensor%gcc
+  - swig%gcc
+  - libaio%gcc
+  - python@3.11%gcc
+  - py-pip%gcc
+  - py-cython%gcc
+  - py-setuptools%gcc
+  - py-setuptools-scm%gcc +toml
+  - py-setuptools-rust%gcc
+  - py-wheel%gcc
+  - py-packaging%gcc
+  - py-pathspec%gcc
+  - py-pybind11@2.11.0%gcc
+  - py-pluggy%gcc
+  - py-ninja%gcc
+  - py-pytest%gcc
+  - py-pytest-xdist%gcc
+  - py-torch@2.2.0%gcc +distributed +cuda +cudnn +nccl +mpi
+  - py-dacite
+  - py-huggingface-hub%gcc
+  - py-nvidia-dali%gcc
+  - py-zarr%gcc
+  - py-nvtx%gcc
+  - py-safetensors@0.4.1%gcc
+  - py-tokenizers@0.19.1%gcc
+  - py-pyarrow-hotfix
+  - py-datasets@2.19.0%gcc
+    #- py-flash-attn@2.5.8%gcc
+    #- py-triton%gcc
+  - py-transformers@4.40.1%gcc
+  - py-einops%gcc
+  - py-hatchling%gcc
+  - arrow%gcc +parquet +snappy +zlib +zstd +brotli +compute 
+  - py-nltk%gcc
+  - py-pyarrow@15.0.2 +dataset +parquet
+  variants:
+  - +mpi
+  - +cuda
+  - cuda_arch=90
+  views:
+    default:
+      link: all

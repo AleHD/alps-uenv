@@ -1,0 +1,7 @@
+name: nanotron-v0.1
+spack:
+  commit: origin/ml
+  repo: https://github.com/boeschf/spack.git
+store: /user-environment
+description: Toolchain for Machine Learning, PyTorch and other development tools
+

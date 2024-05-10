@@ -1,0 +1,24 @@
+py-dev-env:
+  compiler:
+      - toolchain: gcc
+        spec: gcc@12.3
+      - toolchain: llvm
+        spec: llvm@17
+  mpi:
+      spec: cray-mpich@8.1.29
+      gpu: cuda
+  unify: true
+  specs:
+  - cray-mpich%gcc
+  - cmake%gcc
+  - cuda@12.0%gcc
+  - python@3.12%gcc
+  - py-pip%gcc
+  - fish%gcc
+  variants:
+  - +mpi
+  - +cuda
+  - cuda_arch=90
+  views:
+    default:
+      link: all

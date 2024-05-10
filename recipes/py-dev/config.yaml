@@ -1,0 +1,6 @@
+name: py-dev
+spack:
+  commit: origin/ml
+  repo: https://github.com/boeschf/spack.git
+store: /user-environment
+description: Misc python development environment

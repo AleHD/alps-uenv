@@ -1,4 +1,4 @@
-ml-base-env:
+nanotron:
   compiler:
       - toolchain: gcc
         spec: gcc@12.3
@@ -57,6 +57,7 @@ ml-base-env:
   - arrow%gcc +parquet +snappy +zlib +zstd +brotli +compute 
   - py-nltk%gcc
   - py-pyarrow@15.0.2 +dataset +parquet
+  - py-wandb%gcc
   variants:
   - +mpi
   - +cuda

@@ -1,0 +1,6 @@
+#! /bin/bash
+
+. {{ env.mount }}/env/._default/*/activate.sh
+
+# Install poetry.
+python -m pip install poetry
